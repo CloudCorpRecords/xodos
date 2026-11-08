@@ -42,12 +42,20 @@ that doc covers the OS around it.
 
 The slot is the same. What fills it is your choice.
 
-### (a) Xod, built in — the default
+### (a) Xod, built in — the default is the Magician
 
-Every XodOS phone ships with Xod as its agent, and a default Xod
-character in the slot: a name and a look from us, both changeable.
-No account needed for the character to be present; the fleet features
-still ride the first-run sign-in (AI-NATIVE-UX §(c)).
+Every XodOS phone ships with Xod as its agent, and the slot is filled
+by **the Magician** — Xod's own character from its Living Look pack:
+a small white-and-violet robot magician. Purple top hat with a gold
+star band, teal eye visor, crimson bow tie, gold star wand, on an
+indigo stage. He is not a placeholder: he already has a real animation
+library (§3), and it is growing.
+
+The Magician is the default, not a lock-in. Rename him, restyle the
+slot with your own image (post-Store slice, §4), or hand the whole
+slot to your Muse (§b). No account needed for the Magician to be
+present; the fleet features still ride the first-run sign-in
+(AI-NATIVE-UX §(c)).
 
 ### (b) Connect your Muse — your character moves in
 
@@ -68,9 +76,9 @@ character ports to the phone:
   The phone keeps only what it needs locally: the look, the clips, and
   the on-device abilities.
 - **Sign-out / revoke:** disconnecting drops the ported character back
-  to the default Xod character and deletes the synced clips from the
-  phone. Your Muse itself is untouched. Revoking the phone from the
-  family registry (§(c)) does the same, from the other side.
+  to the Magician and deletes the synced clips from the phone. Your
+  Muse itself is untouched. Revoking the phone from the family
+  registry (§(c)) does the same, from the other side.
 
 **Honest status:** Muse avatars and generated avatar videos are real
 Muse capabilities today — your Muse already has a face and can
@@ -84,30 +92,55 @@ needs no one's permission but ours.
 The character's moves are **short video clips in named slots**. A slot
 is a moment; a clip is how your character fills it.
 
-**Starter slots** (every character ships with these filled or fillable):
+**The starter library is the Magician's, and it is real.** The
+library is being grown to **20+ clips**. It starts from the Living
+Look state loops that already exist, plus the batch now generating:
 
-| Slot | Plays when |
-|---|---|
-| `greeting` | First unlock of the day, or you open the panel |
-| `idle` | Home, nothing happening (the breathing loop) |
-| `listening` | You start talking or typing |
-| `thinking` | The agent is working on something |
-| `celebration` | A task lands: sent, booked, done |
-| `wave` | A new device joins, or a handoff between your devices |
-| `sleep` | Night, or the agent is paused |
-| `needs-you` | The rim-glow moment (§1) gets its own small move |
+| Slot | Plays when | Status |
+|---|---|---|
+| `idle` | Home, nothing happening — the breathing loop | **Have it** |
+| `working` | The agent is on a task | **Have it** |
+| `looking` | The agent is searching or reading | **Have it** |
+| `playing` | Media, games, downtime | **Have it** |
+| `upgrading` | An update is applying (the store channel, §(d)) | **Have it** |
+| `celebrating` | A task lands: sent, booked, done | **Have it** |
+| `greeting` | First unlock of the day, or you open the panel | Generating (batch 1) |
+| `thinking` | The agent is weighing something up | Generating (batch 1) |
+| `listening` | You start talking or typing | Generating (batch 1) |
+| `sleeping` | Night, or the agent is paused | Generating (batch 1) |
+| `dancing` | The idle-dance — and the template for custom moves | Generating (batch 1) |
+| `tada` | The big reveal: a finished project, a surprise kept | Generating (batch 1) |
+| `wave` | A new device joins, or a handoff between yours | Next named slot |
+| `needs-you` | The rim-glow moment (§1) gets its own small move | Next named slot |
 
-Plus **custom slots** — moves you ask for, named by you.
+Twelve exist or are generating now; `wave` and `needs-you` are named
+next; **custom slots** — moves you ask for, named by you — carry the
+library past 20. A character whose brain is a connected Muse fills
+the same slots from its own library (its avatar clips), and the
+slots it can't fill yet fall back to its avatar image, never to the
+Magician's clips — the character in the slot is one character.
+
+The full Magician library is staged for the OS at
+`~/workspace/tree-os/assets/magician/` as clips land, so the image
+build (§4, generation slice) picks up the library as it stands.
 
 **The flow:**
 
 1. You ask: *"Do a little spin when my run finishes."*
-2. The clip is **generated through the connected brain's pipeline**:
-   - **Muse:** the avatar video generation that exists today — the
-     same pipeline that makes your Muse's dance videos.
-   - **Xod:** a server-side generation route for the built-in
-     character — **future**, marked as such; until it lands, Xod
-     characters use the starter set and any image you set.
+2. The clip is **generated through the character's own pipeline** —
+   two different pipelines, and the difference matters:
+   - **The Magician (Xod):** the **Living Look pipeline** — a
+     generated keyframe image, then a **10-second video loop** built
+     from it. This is how all 12 clips above were made; batch
+     generation is running now. It is built differently from Muse
+     avatar videos: keyframe-first, fixed-length loops, one style
+     (the stage, the look) held across the whole library.
+   - **Your Muse:** Muse's **avatar video generation**, the
+     pipeline that exists today behind your Muse's dance videos —
+     your Muse's own avatar, its own generation route.
+   Custom requests from the phone (you asking the Orb for a new
+   move) route to whichever pipeline owns the character in the
+   slot; the phone-side request button is the generation slice (§4).
 3. The finished clip **lands in the phone's animation library**,
    filed under its slot, and the Orb plays it there from then on.
    If the character is Muse-connected, the clip also joins the
@@ -116,11 +149,11 @@ Plus **custom slots** — moves you ask for, named by you.
    you see the clip before it goes live. Approving it once is
    enough — same rules as everything else (AI-NATIVE-UX §(b)).
 
-**Phone discipline for clips:** short (a few seconds), small (sized
-for the well, not the cinema), loopable where the slot loops, cached
-on the device so the character moves with no network. A clip that
-can't meet the size bar gets re-cut at generation time, not shipped
-heavy.
+**Phone discipline for clips:** the Living Look standard is the
+bar — a **10-second loop**, small (sized for the well, not the
+cinema), loopable where the slot loops, cached on the device so
+the character moves with no network. A clip that can't meet the
+size bar gets re-cut at generation time, not shipped heavy.
 
 **Yours:** your character, your clips. The library is exportable —
 files out, no lock-in — and deleting a clip deletes it everywhere
@@ -137,7 +170,7 @@ not a setting, not coming.
 | **v0.5 (in flight)** | The Orb well: top-center slot on home, tap opens the agent panel. Placeholder character; the well is the contract everything else fills. |
 | **Post-Store** | Character sheet (long-press) + avatar image slot: set any image as your character. Slots defined; starter clips or stills fill them. |
 | **Fleet slice** | Muse connect: sign-in ports avatar, name, and vibe into the slot (§2b). Library sync rides the same connection. |
-| **Generation slice** | Clip library + slot playback on the phone first — clips made anywhere play in their slots. Then custom generation requests from the character sheet, through the connected brain's pipeline. |
+| **Generation slice** | Clip library + slot playback on the phone first: the Magician's Living Look library (staged at `assets/magician/`) ships as the starter set, and clips made anywhere play in their slots. Then custom generation requests from the character sheet, routed to the owning pipeline (§3). |
 
 Order matters: the face first, then the look is yours, then your Muse
 moves in, then it learns new moves. Each slice works on its own —

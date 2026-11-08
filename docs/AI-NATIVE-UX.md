@@ -161,3 +161,15 @@ Emulation is a first-class place in the OS, not a folder of loose apps.
   fetches it from the catalog, installs it, and lays out the folders —
   under the same approval rules as everything else: downloads and
   installs are above the line until you say otherwise.
+
+## (h) The Orb — the agent home has a face
+
+The agent of §(a) is a character: the **Orb**, top-center on home,
+always present. It shows state by moving (idle, listening, thinking,
+celebrating, asleep) and glows when the Needs-you queue needs you —
+the cards stay in the queue, never in the chat. Tap it to talk;
+long-press for the character sheet. The character slot holds Xod by
+default, or **your Muse** when you connect it — avatar, name, and
+vibe port over. Its moves are video clips in named slots, and new
+ones can be generated, so the character grows. Full design:
+[CHARACTER-ORB.md](CHARACTER-ORB.md).

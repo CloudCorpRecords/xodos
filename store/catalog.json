@@ -1,6 +1,6 @@
 {
   "store": "XodOS Store",
-  "catalogVersion": 9,
+  "catalogVersion": 10,
   "layers": [
     {
       "id": "curated",
@@ -21,6 +21,11 @@
       "id": "web",
       "name": "Web apps",
       "note": "Proprietary services enter the store ONLY as web entries: a name, a URL, an honest label. No APK is ever listed, preloaded, bundled, or redistributed for them, and no proprietary logos or artwork ship. The action is OPEN in the browser, never install."
+    },
+    {
+      "id": "emulators",
+      "name": "Emulators",
+      "note": "Console emulators, byte-verified from their official channels (F-Droid builds + PPSSPP's official site build) and marked category: emulator with the systems each plays. XodOS bundles NO emulators and NO games/ROMs \u2014 the catalog lists the emulators themselves only; the Emulators surface in the OS downloads them through the same verified staged-install path as every app, and prepares /sdcard/XodOS/Emulation/roms/<system> for the user's own game files. Sources that offer no official direct APK (DuckStation, Redream, Mupen64Plus FZ, the Pizza Boy set, My Boy!/My OldBoy!) and unofficial patch distributions (AetherSX2/NetherSX2) are excluded by the same verify-or-leave-out rule."
     },
     {
       "id": "fdroid",
@@ -343,6 +348,116 @@
       ],
       "origin": "curated",
       "official": false
+    },
+    {
+      "name": "RetroArch",
+      "package": "com.retroarch",
+      "developer": "Libretro Team",
+      "description": "One emulator for dozens of classic systems, powered by cores.",
+      "version": "1.22.2",
+      "versionCode": 1597175267,
+      "apkUrl": "https://f-droid.org/repo/com.retroarch_1597175267.apk",
+      "sha256": "7120fd7a7f15b7a260366a8122c77070a80bc14bf28d34bc609439b2b52fdb64",
+      "sizeBytes": 30940927,
+      "source": "GPL-3.0 \u00b7 official F-Droid repository build",
+      "kind": "app",
+      "runsOn": "phone",
+      "connect": "staged-install",
+      "agentReady": false,
+      "agentCapabilities": [],
+      "origin": "curated",
+      "official": false,
+      "category": "emulator",
+      "systems": [
+        "GB",
+        "GBC",
+        "GBA",
+        "NES",
+        "SNES",
+        "N64",
+        "PSX",
+        "Genesis",
+        "Dreamcast",
+        "Arcade"
+      ]
+    },
+    {
+      "name": "Lemuroid",
+      "package": "com.swordfish.lemuroid",
+      "developer": "Filippo Scognamiglio",
+      "description": "All-in-one emulator for classic consoles and handhelds.",
+      "version": "1.17.0",
+      "versionCode": 252,
+      "apkUrl": "https://f-droid.org/repo/com.swordfish.lemuroid_252.apk",
+      "sha256": "f83912a5c276f3616833fcf1b44a8e40c61d5a20f76db3f4297d6c1f63805c42",
+      "sizeBytes": 11970354,
+      "source": "GPL-3.0 \u00b7 official F-Droid repository build",
+      "kind": "app",
+      "runsOn": "phone",
+      "connect": "staged-install",
+      "agentReady": false,
+      "agentCapabilities": [],
+      "origin": "curated",
+      "official": false,
+      "category": "emulator",
+      "systems": [
+        "GB",
+        "GBC",
+        "GBA",
+        "NES",
+        "SNES",
+        "N64",
+        "PSX",
+        "PSP",
+        "Genesis"
+      ]
+    },
+    {
+      "name": "Dolphin",
+      "package": "org.dolphinemu.dolphinemu",
+      "developer": "Dolphin Emulator Project",
+      "description": "GameCube and Wii emulator.",
+      "version": "2603a",
+      "versionCode": 42460,
+      "apkUrl": "https://f-droid.org/repo/org.dolphinemu.dolphinemu_42460.apk",
+      "sha256": "5279425e01c552ba6cde1adc7f08f1c1f5b8f9271c2418a4ad849ee4106ee719",
+      "sizeBytes": 20588646,
+      "source": "GPL-2.0-or-later \u00b7 official F-Droid repository build",
+      "kind": "app",
+      "runsOn": "phone",
+      "connect": "staged-install",
+      "agentReady": false,
+      "agentCapabilities": [],
+      "origin": "curated",
+      "official": false,
+      "category": "emulator",
+      "systems": [
+        "GameCube",
+        "Wii"
+      ]
+    },
+    {
+      "name": "PPSSPP",
+      "package": "org.ppsspp.ppsspp",
+      "developer": "Henrik Rydg\u00e5rd",
+      "description": "The PSP emulator \u2014 play your PSP games in HD.",
+      "version": "1.20.4",
+      "versionCode": 120040000,
+      "apkUrl": "https://www.ppsspp.org/files/1_20_4/ppsspp.apk",
+      "sha256": "dd702a31270ecd68db37afee311d6efe08b1d4da9601d2750ce1a73bbd316c3f",
+      "sizeBytes": 45448397,
+      "source": "GPL-2.0-or-later \u00b7 official ppsspp.org build",
+      "kind": "app",
+      "runsOn": "phone",
+      "connect": "staged-install",
+      "agentReady": false,
+      "agentCapabilities": [],
+      "origin": "curated",
+      "official": false,
+      "category": "emulator",
+      "systems": [
+        "PSP"
+      ]
     }
   ],
   "tools": [

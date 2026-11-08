@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TreeOS default-home spec item: the device is provisioned from the image.
+     SettingsProvider reads its first-boot database defaults from these resources
+     (defaults.xml in com.android.providers.settings); overriding them to true
+     means the Google setup wizard never owns the HOME role on a fresh wipe and
+     first boot proceeds in the provisioned state from the start. -->
+<resources>
+    <bool name="def_device_provisioned">true</bool>
+    <bool name="def_user_setup_complete">true</bool>
+</resources>

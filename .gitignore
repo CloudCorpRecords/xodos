@@ -1,0 +1,18 @@
+# Binaries are never committed: no APKs, no system images, no archives.
+*.apk
+*.img
+*.raw
+*.qcow2
+*.zip
+*.tar.gz
+apks/
+
+# Build outputs
+build/
+.gradle/
+local.properties
+__pycache__/
+*.pyc
+
+# Logs and scratch
+*.log

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dev.treeos.overlay.settingsprovider">
+    <overlay
+        android:targetPackage="com.android.providers.settings"
+        android:isStatic="true"
+        android:priority="100" />
+    <application
+        android:hasCode="false"
+        android:label="TreeOS SettingsProvider Defaults" />
+</manifest>

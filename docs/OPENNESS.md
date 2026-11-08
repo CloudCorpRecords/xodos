@@ -1,11 +1,13 @@
-# TreeOS — openness direction
+# XodOS — openness direction
 
-TreeOS is an open-source product (Apache License 2.0). This note records
+Renamed from TreeOS on 2026-11-07.
+
+XodOS is an open-source product (Apache License 2.0). This note records
 what is open today, what is not, and where the line moves next.
 
 ## Open today
 
-Everything TreeOS owns is in this repo under the LICENSE:
+Everything XodOS owns is in this repo under the LICENSE:
 
 - the launcher/app suite source (`launcher/`)
 - the image surgery tooling (`image-surgery/`)

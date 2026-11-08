@@ -1,4 +1,5 @@
-# TreeOS — emulator that takes our OS (system-image plan)
+# XodOS — emulator that takes our OS (system-image plan)
+Renamed from TreeOS on 2026-11-07. Earlier entries below keep the name they were written under.
 Rene directive 2026-11-07 10:34 PT: "We should be using a emulator that can take our os"
 
 ## The distinction Rene is pointing at

@@ -1,20 +1,22 @@
-# TreeOS
+# XodOS
+
+Renamed from TreeOS on 2026-11-07 — same project, new name.
 
 An open Android OS, built by [Rene Turcios](https://github.com/CloudCorpRecords).
 
-TreeOS is two things that ship as one:
+XodOS is two things that ship as one:
 
-- **A system image** — a GSI-style Android system image with TreeOS baked in as
+- **A system image** — a GSI-style Android system image with XodOS baked in as
   system apps, defined once by a written spec
   ([`docs/CONTENT-MANIFEST.md`](docs/CONTENT-MANIFEST.md)) so the same OS builds
   for the emulator today and for phones later.
-- **Its own app suite** — a home/launcher plus TreeOS apps (Calculator, Notes,
+- **Its own app suite** — a home/launcher plus XodOS apps (Calculator, Notes,
   Flashlight, About), plain Java, no proprietary dependencies.
 
-![TreeOS home on a wiped, zero-touch emulator boot](docs/screenshots/emu-treeos-defhome-1.png)
+![XodOS home on a wiped, zero-touch emulator boot](docs/screenshots/emu-treeos-defhome-1.png)
 
-*TreeOS home, first boot of the standalone image after a factory wipe — no
-install step, no setup commands. The image boots straight to TreeOS.*
+*XodOS home (as TreeOS), first boot of the standalone image after a factory wipe — no
+install step, no setup commands. The image boots straight to XodOS.*
 
 ## Status — stated plainly
 
@@ -43,7 +45,7 @@ The scripts of record for our reference build machine are in
 ## Build the system image
 
 The image is not compiled from AOSP (yet). It is *reproduced*: the manifest
-lists every file TreeOS adds to a stock base image — destination, source,
+lists every file XodOS adds to a stock base image — destination, source,
 SHA-256, mode, owner, SELinux label — plus a 7-step checklist that ends in
 boot read-backs.
 
@@ -71,12 +73,12 @@ boot read-backs.
 
 Apache License 2.0 — see [`LICENSE`](LICENSE). It covers the TreeOS-owned
 content in this repo: exactly the files
-[`docs/CONTENT-MANIFEST.md`](docs/CONTENT-MANIFEST.md) lists as TreeOS's.
+[`docs/CONTENT-MANIFEST.md`](docs/CONTENT-MANIFEST.md) lists as XodOS's.
 
 One boundary, stated plainly: the current **test** image is built on Google's
 `android-35 google_apis` base, which contains Google-proprietary apps. Those
-apps are **not** part of TreeOS, are **not** covered by this license, and are
+apps are **not** part of XodOS, are **not** covered by this license, and are
 **not** distributed here — this repo contains no system images and no APK
-binaries, only the source and tooling to reproduce TreeOS's additions. The
+binaries, only the source and tooling to reproduce XodOS's additions. The
 open distribution base (AOSP, no Google apps) is the direction in
 [`docs/OPENNESS.md`](docs/OPENNESS.md).

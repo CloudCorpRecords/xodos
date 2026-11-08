@@ -1,4 +1,5 @@
-# TreeOS — Phone OS for Android
+# XodOS — Phone OS for Android (formerly TreeOS)
+Renamed from TreeOS on 2026-11-07. Earlier entries below keep the name they were written under.
 Started: 2026-11-07 — Rene directive: build a phone OS, test in emulator, then put it on a real phone.
 
 ## Verified starting position (checked 2026-11-07)
